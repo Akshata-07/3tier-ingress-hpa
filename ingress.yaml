@@ -15,7 +15,7 @@ spec:
     - host: "ab645c5523359410b861469802d82a0c-f6393e02b0ecc2f2.elb.eu-north-1.amazonaws.com"
       http:
         paths:
-        - path: /opt/apache-tomcat-8.5.98/webapps/student/index.jsp
+        - path: /opt/apache-tomcat-8.5.98/webapps/student
           pathType: Prefix
           backend:
             service:
