@@ -14,12 +14,12 @@ spec:
   rules:
     - host: "ab645c5523359410b861469802d82a0c-f6393e02b0ecc2f2.elb.eu-north-1.amazonaws.com"
       http:
-          paths:
-          - path: /student
-            pathType: Prefix
-            backend:
-              service:
-                name: backend-service
-                port:
-                  number: 8080
+        paths:
+        - path: /opt/apache-tomcat-8.5.98/webapps/
+          pathType: Prefix
+          backend:
+            service:
+              name: frontend-service
+              port:
+                number: 8080
       
