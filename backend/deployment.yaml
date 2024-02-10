@@ -1,4 +1,4 @@
----
+ ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,8 +29,21 @@ spec:
       app: backend
   strategy:
     type: RollingUpdate
-...
+ ...
 
----
-
-...
+  ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  labels:
+    app: backend
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: backend
+  ...
